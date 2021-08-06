@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddToCartService } from './services/add-to-cart.service';
 
 
 @Component({
@@ -8,10 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookKartB14A';
-input = "0";
-  hidden = false;
+ 
+  input:number= 0;
+  // hidden = false;
 
-  toggleBadgeVisibility() {
-    this.hidden = !this.hidden;
+  constructor(private cart:AddToCartService){
+
+  }
+ngOnInit():void{
+  this.cart.getProducts(2)
+    .subscribe(response=>{
+      this.input=response.length;
+    })
   }
 }
+
+
+
