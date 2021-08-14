@@ -9,8 +9,9 @@ import { AddToCartService } from './services/add-to-cart.service';
 })
 export class AppComponent {
   title = 'bookKartB14A';
- 
-  input:number= 0;
+ productList:any;
+   input:number= 0;
+   totalCartItem:number=0;
   // hidden = false;
 
   constructor(private cart:AddToCartService){
@@ -19,7 +20,8 @@ export class AppComponent {
 ngOnInit():void{
   this.cart.getProducts(2)
     .subscribe(response=>{
-      this.input=response.length;
+      // this.totalCartItem=response.length;
+      this.productList=response;
     })
   }
 }

@@ -61,8 +61,11 @@ body {
   
   .example-card {
     max-width: 400px;
+    width: 250px;
+    height: 220px;
     position: center;
     margin-left: 50px;
+    margin-bottom: 20px;
   }
 
   button {

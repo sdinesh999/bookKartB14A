@@ -7,18 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AddToCartService {
-
+  totalCartItem:number=0;
   baseURL:string;
   constructor(private http:HttpClient) { 
-    this.baseURL = "https://bookcart.azurewebsites.net/api/shoppingcart/addToCart/37879/2";
+    this.baseURL = "https://bookcart.azurewebsites.net/api/book";
   }
+ productUrl ="https://bookcart.azurewebsites.net/api/shoppingcart/addToCart/19408/2";
 
-  //  addProducts(){
-//    return this.http.post<Number>(this.baseURL + ``)
-//  }
-//  addBookToCart(userId: number, bookId: number) {
-//   return this.http.post<number>(this.baseURL + `addToCart/${userId}/${bookId}`, {});
-// }
+ addProducts(userId: number, bookId: number) {
+  return this.http.post<number>(this.productUrl,{});
+}
 
 getProducts(userId:number):Observable<any>{
   return this.http.get<any>(this.baseURL).pipe(map((response:any)=>{
