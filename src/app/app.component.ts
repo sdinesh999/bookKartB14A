@@ -9,10 +9,10 @@ import { AddToCartService } from './services/add-to-cart.service';
 })
 export class AppComponent {
   title = 'bookKartB14A';
- productList:any;
-   input:number= 0;
+  productList:any;
+  
    totalCartItem:number=0;
-  // hidden = false;
+ 
 
   constructor(private cart:AddToCartService){
 

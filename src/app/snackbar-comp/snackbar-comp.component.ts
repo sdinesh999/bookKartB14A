@@ -12,7 +12,7 @@ export class SnackbarCompComponent implements OnInit {
 
   userId:any;
   bookId:any;
-
+  totalCartItem:number=0;
   constructor(private snackBarService:SnackbarService,
     private cartService:AddToCartService,
     private subscriptionService:SubscriptionService) { }
