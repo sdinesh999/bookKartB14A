@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddToCartService } from './services/add-to-cart.service';
+import { SubscriptionService } from './services/subscription.service';
 
 
 @Component({
@@ -14,13 +15,16 @@ export class AppComponent {
    totalCartItem:number=0;
   url = "https://bookcart.azurewebsites.net/upload/";
 
-  constructor(private cart:AddToCartService){
+  constructor(private cart:AddToCartService,
+    private subscriptionService:SubscriptionService){
 
   }
 ngOnInit():void{
   this.cart.getProducts(2)
     .subscribe(response=>{
+
       // this.totalCartItem=response.length;
+
       this.productList=response;
     })
   }
