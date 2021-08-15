@@ -11,17 +11,21 @@
     <a href="#">SignUp</a>
   </div>
 </div>
-
-<mat-card class="example-card" *ngFor="let item of productList">
-  <mat-card-header>
-    <img mat-card-image src="{{item.coverFileName}}" alt="image">
-  </mat-card-header>
-  <mat-card-title>{{item.title}}</mat-card-title>
-    
-    <span>{{item.price | currency:'INR'}}</span>
-  <mat-card-actions>
-    <app-snackbar-comp></app-snackbar-comp>
-  </mat-card-actions>
-</mat-card>
-
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-md-3"> -->
+      <mat-card class="example-card" *ngFor="let item of productList">
+        <!-- <mat-card-header> -->
+          <img mat-card-image class="mat-card-img" src="{{url}}{{item.coverFileName}}" alt="image">
+        <!-- </mat-card-header> -->
+        <mat-card-title>{{item.title}}</mat-card-title>
+          
+          <span>{{item.price | currency:'INR'}}</span>
+        <mat-card-actions>
+          <app-snackbar-comp></app-snackbar-comp>
+        </mat-card-actions>
+       </mat-card>
+    <!-- </div>
+   </div> -->
+</div>
 <router-outlet></router-outlet>

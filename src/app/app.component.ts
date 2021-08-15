@@ -12,7 +12,7 @@ export class AppComponent {
   productList:any;
   
    totalCartItem:number=0;
- 
+  url = "https://bookcart.azurewebsites.net/upload/";
 
   constructor(private cart:AddToCartService){
 

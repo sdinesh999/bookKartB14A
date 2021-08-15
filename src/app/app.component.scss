@@ -66,10 +66,21 @@ body {
     position: center;
     margin-left: 50px;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 
-  button {
-    color: blue;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .mat-card-img{
+    height: 135px;
+    width: 283px;
+    padding-top: 0%;
+    padding-left: 0%;
+    // justify-content: left;
   }
   
   // .example-header-image {
