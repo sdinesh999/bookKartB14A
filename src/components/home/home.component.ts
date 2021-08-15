@@ -1,8 +1,9 @@
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { SpaceValidator } from './spacevalidation';
+import { AuthService } from '../auth.service';
 
 
 
