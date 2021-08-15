@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private authService:AuthService,private router:Router,private alertService:AlertService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {this.form = this.formBuilder.group({
-    username: ['', Validators.required],
+    // username: ['', Validators.required],
     password: ['', Validators.required]
 });
   }
@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
           .subscribe({
               next: () => {
                   // get return url from query parameters or default to home page
-                  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                  this.router.navigateByUrl(returnUrl);
+                  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+                  this.router.navigateByUrl('/home');
               },
               error: (error: string) => {
                   this.alertService.error(error);
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 onLogin(){
 console.log(this.form.value)
 if(this.submitted){
-  console.log("successfully");
+  console.log("sccessful");
 
 }else{
     console.log("unsccessful")

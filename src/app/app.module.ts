@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { PricefilterComponent } from './pricefilter/pricefilter.component';
 import { BookfilterComponent } from './bookfilter/bookfilter.component';
@@ -40,6 +40,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { HomeComponent } from '../components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
