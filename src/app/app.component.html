@@ -6,12 +6,12 @@
     <ul class="nav navbar-nav">
       <li class="active"><a  routerLink="/pricefilter" routerLinkActive="active"><button>price</button></a>
         <li class="active"><a  routerLink="/bookfilter" routerLinkActive="active"><button>booK</button></a>
-    
+          
         <a *ngIf="loggedIn"class="button" (click)="logout()"><button>Logout</button></a>
     </ul>
   </div>
 </nav>
-<app-home></app-home>
+<app-login></app-login>
 
 
   <router-outlet></router-outlet>

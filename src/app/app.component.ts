@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/components/auth.service';
+import { AuthService } from 'src/app/auth.service';
 
 import { User } from './users';
 
@@ -18,7 +18,7 @@ export class AppComponent {
   }
   logout(){
     this.loggedIn=false
-    this.authService.logout(username, password);
+    this.authService.logout();
     this.router.navigateByUrl('/login')
     this.openInNewTab();
   }

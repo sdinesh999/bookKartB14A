@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../alert.service';
 import { AuthService } from '../auth.service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,9 +19,16 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private authService:AuthService,private router:Router,private alertService:AlertService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {this.form = this.formBuilder.group({
-    // username: ['', Validators.required],
+    username: ['', Validators.required],
     password: ['', Validators.required]
 });
+  }
+  get username(){
+    return this.form.get('user.username')
+  }
+
+  get password(){
+    return this.form.get('user.password')
   }
   
   get f() { return this.form.controls; }
