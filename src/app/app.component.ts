@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
+
+import { User } from './users';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bookKartB14A';
+  user: User | undefined;
+  error: void;
+  loggedIn=true;
+  constructor(private authService: AuthService,private router:Router){}
+  ngOnInit(){
+  }
+  logout(){
+    this.loggedIn=false
+    this.authService.logout();
+    this.router.navigateByUrl('/login')
+    this.openInNewTab();
+  }
+  openInNewTab(){
+const win =window.open();
+win?.focus();
+} 
 }
+function username(username: any, password: any) {
+  throw new Error('Function not implemented.');
+}
+
+function password(username: any, password: any) {
+  throw new Error('Function not implemented.');
+}
+
